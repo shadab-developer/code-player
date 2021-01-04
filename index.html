@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Code Player</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="js/jquery.js"></script>
+    <script src="jquery-ui/jquery-ui.css"></script>
+    <script src="jquery-ui/jquery-ui.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,100&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div id="header">
+
+
+        <img class="logo" src="img/dave.min.svg">
+            <ul>
+
+                <li><a href="#"> File<i class="fas fa-arrow-down"></i></a></li>
+                <li><a href="#"><select id="library">
+                    <option value="volvo" selected>Add a Library</option>
+                    <option value="saab">Saab</option>
+                    <option value="opel">Opel</option>
+                    <option value="audi">Audi</option>
+                </select></a></li>
+
+                <div id="right-menu">
+                    <ul>
+                        <li class="login-register"><a href="#">Login and Register</a></li>
+                        <li><a href="#">Blog</a> </li>
+                        <li><a href="#">Help</a> </li>
+                    </ul>
+                </div>
+            </ul>
+
+
+        <div id="center-option">
+            <ul>
+                <li class="toggleButton" id="html"><a href="#">HTML</a></li>
+                <li class="toggleButton" id="css"><a href="#">CSS</a></li>
+                <li class="toggleButton" id="javascript"><a href="#">JavaScript</a></li>
+                <li class="toggleButton" id="console"><a href="#">Console</a></li>
+                <li class="toggleButton" id="output"><a href="#"><p style="color: white; background-color: #002856">Run</p></a></li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="clear"></div>
+
+    <div id="code-player">
+        <div class="html box">
+            <p>HTML<i class="fas fa-arrow-down"></i></p>
+            <textarea id="htmltextarea"></textarea>
+        </div>
+
+        <div class="css box">
+            <p>CSS<i class="fas fa-arrow-down"></i></p>
+            <textarea id="csstextarea"></textarea>
+        </div>
+        <div class="javascript box">
+            <p>JavaScript<i class="fas fa-arrow-down"></i></p>
+            <textarea id="jstextarea"></textarea>
+        </div>
+
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <iframe id="code-output" class="output-panel"></iframe>
+
+
+        </div>
+
+    </div>
+
+
+
+
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("output");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+
+
+
+
+    var input = document.getElementById("htmltextarea");
+
+    input.addEventListener("keyup", function(event) {
+        if (event.keyCode === 27) {
+            event.preventDefault();
+            // Get the button that opens the modal
+            var btn1 = document.getElementById("htmltextarea");
+
+                modal.style.display = "block";
+
+
+        }
+    });
+</script>
+</body>
+</html>
